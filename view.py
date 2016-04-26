@@ -2,9 +2,8 @@ from tkinter import *
 
 myapp = Tk()
 
-
 def new():
-    top = toplevel()
+    top = Toplevel()
     print("new")
 
 
