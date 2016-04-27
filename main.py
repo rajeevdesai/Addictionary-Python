@@ -43,10 +43,10 @@ def generate_word_medium(word):
 
 def check_word_validity(word):
     if(word in used_words):
-        print("Word is already used!")
+        #print("Word is already used!")
         return False
     if(word not in words):
-        print("Word is not a valid word!")
+        #print("Word is not a valid word!")
         return False
     if(word == "Exit Game"):
         return False
@@ -59,17 +59,19 @@ def check_new_word_validity(new):
         return False
     return True
 
-word=input("Player : ")
-new=word
-while(word != "Exit Game"):
-    del new_words
-    new_words=[]
-    if(new != "Word Doesn't Exist!" and check_word_validity(word) != False and check_new_word_validity(new) != False):
-        used_words.append(word)
-        new=generate_word_easy(word)
-        print("Computer : ",new)
-        word=input("Player : ")
-    else:
-        word=input("Player : ")
 
-print("Thank You for playing Addictionary!")
+def main(word):
+    #word=input("Player : ")
+    new=word
+    while(word != "Exit Game"):
+        del new_words
+        new_words=[]
+        if(new != "Word Doesn't Exist!" and check_word_validity(word) != False and check_new_word_validity(new) != False):
+            used_words.append(word)
+            new=generate_word_easy(word)
+            #print("Computer : ",new)
+            word=input("Player : ")
+        else:
+            word=input("Player : ")
+
+    #print("Thank You for playing Addictionary!")
